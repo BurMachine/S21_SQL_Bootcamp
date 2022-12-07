@@ -1,4 +1,4 @@
-SELECT person.Name name, menu.pizza_name, menu.price, (menu.price - menu.price * person_discounts.discount/100) discount_price,
+SELECT person.Name name, menu.pizza_name, menu.price, round((menu.price - menu.price * person_discounts.discount/100)) discount_price,
 pizzeria.name
 	FROM person	
 	JOIN person_discounts ON person.id = person_discounts.person_id
